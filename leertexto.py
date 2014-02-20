@@ -65,8 +65,8 @@ if os.path.exists(ruta):
     resultados.sort(reverse=True)
     print ('La cantidad de veces que se repite una palabra es: ',resultados)
     if encontrado>=1:
-        print("Se encontro la cadena "+buscar+ ", y se repite "+ str(encontrado)+" Veces")
+        print("Se encontro la cadena",buscar, "y se repite ",str(encontrado),"Veces")
     else:
-        print("No se encontro la cadena "+buscar)        
+        print("No se encontro la cadena",buscar)        
 else:
     print("El fichero no existe o no pudo ser abierto")
