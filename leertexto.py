@@ -8,6 +8,8 @@ cvoca=0
 ccons=0
 cnume=0
 ccara=0
+lista=[]
+resultados=[]
 ruta=input('Introdusca la ruta de destino del texto: ')
 
 import os.path
@@ -49,6 +51,19 @@ if os.path.exists(ruta):
     print('Se encontraron',cnume,'numeros')
     print('Caracteres',Caracteres)
     print('Se han encontrado',ccara,'caracteres')
+    texto=open(ruta) 
+    archivo=texto.readlines()
+    texto.close()
+    for x in archivo:
+       lista += x.split()
+    lista.sort()
+    listado = set(lista)
+    listado = list(listado)
+    listado.sort()
+    for numero in listado:
+        resultados.append((lista.count(numero), numero))
+    resultados.sort(reverse=True)
+    print ('La cantidad de veces que se repite una palabra es: ',resultados)
     if encontrado>=1:
         print("Se encontro la cadena "+buscar+ ", y se repite "+ str(encontrado)+" Veces")
     else:
